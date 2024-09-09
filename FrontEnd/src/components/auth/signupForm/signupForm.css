@@ -1,0 +1,32 @@
+.inscription-form {
+    max-width: 500px;
+    margin-left: 8rem;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .input-part {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+  
+  .input-ville-code-postal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2.2rem;
+  }
+  
+  .input-ville-code-postal input {
+    width: 102px;
+    margin-top: 5px;
+  }
+  
+  .input-ville-code-postal .input-postal input {
+    width: 90px;
+  }
+  

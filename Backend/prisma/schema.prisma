@@ -1,0 +1,80 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                   String       @id @default(uuid())
+  firstName            String       // Prénom
+  lastName             String       // Nom
+  specialty            String?      // Spécialité (optionnel)
+  companyName          String?      // Raison sociale (Société)
+  phoneNumber          String       // Numéro de téléphone
+  email                String       @unique // Email (unique)
+  password             String       // Mot de passe
+  professionalAddress  String       // Adresse professionnelle
+  city                 String       // Ville
+  postalCode           String       // Code postal
+  createdAt            DateTime     @default(now()) // Date de création
+
+  // Relations
+  appointments         Appointment[] // Un utilisateur peut avoir plusieurs rendez-vous
+  patients             Patient[]      // Un utilisateur peut gérer plusieurs patients
+  notifications        Notification[] // Un utilisateur peut recevoir plusieurs notifications
+}
+
+model Patient {
+  id            String    @id @default(uuid())
+  firstName     String    // Prénom
+  lastName      String    // Nom
+  dateOfBirth   DateTime  // Date de naissance
+  placeOfBirth  String    // Lieu de naissance
+  gender        String    // Sexe
+  maritalStatus String?   // Situation familiale (optionnel)
+  numberOfChildren Int?    // Nombre d'enfants (optionnel)
+  phoneNumber   String?   // Numéro de téléphone (optionnel)
+  address       String    // Adresse
+  email         String?   @unique // Adresse e-mail (optionnel)
+  profession    String?   // Profession (optionnel)
+
+  // Relations
+  userId        String
+  user          User      @relation(fields: [userId], references: [id])
+  appointments  Appointment[] // Un patient peut avoir plusieurs rendez-vous
+
+  createdAt     DateTime  @default(now()) // Date de création
+}
+
+model Appointment {
+  id            String    @id @default(uuid())
+  date          DateTime  // Date du rendez-vous
+  time          String    // Heure du rendez-vous
+  description   String?   // Description du rendez-vous
+  status        String?   // Statut du rendez-vous (optionnel)
+
+  // Relations
+  userId        String
+  user          User      @relation(fields: [userId], references: [id])
+  patientId     String?
+  patient       Patient?  @relation(fields: [patientId], references: [id])
+
+  createdAt     DateTime  @default(now()) // Date de création
+}
+
+model Notification {
+  id            String    @id @default(uuid())
+  content       String    // Contenu de la notification
+  isRead        Boolean   @default(false) // Statut de lecture
+
+  // Relations
+  userId        String
+  user          User      @relation(fields: [userId], references: [id])
+
+  createdAt     DateTime  @default(now()) // Date de création
+}
+

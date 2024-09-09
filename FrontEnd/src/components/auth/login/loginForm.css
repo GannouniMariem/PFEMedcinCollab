@@ -1,0 +1,32 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 3px 4px 8px 0px #ada9c375;
+    background: #f8f8f8;
+  }
+  .connexion-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-left: 2rem;
+  }
+  h2 {
+    color: #3a63f3;
+  }
+  .labelInput {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .inputPart {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+  

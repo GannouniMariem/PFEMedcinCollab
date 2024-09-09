@@ -1,0 +1,565 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+/* Calendar Styles */
+/* Calendar Wrapper */
+
+/* Calendar Wrapper */
+
+/* Calendar Wrapper */
+.rbc-calendar {
+  border: 1px solid #ddd;
+  font-family: "Arial", sans-serif;
+  background-color: #f9f9f9;
+  box-shadow: 4px 3px 7px 0px #8d97ff26;
+  border-radius: 5px;
+  background: #ffffff;
+}
+
+/* Toolbar and Buttons */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 50px;
+}
+
+.rbc-toolbar {
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rbc-toolbar button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.rbc-toolbar button:hover {
+  background-color: #0056b3;
+}
+
+/* Navigation Buttons with Circular Style */
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.nav-button {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  color: #007bff;
+  border: 2px solid #787fca;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  background-color: #e0e0ff;
+  border-color: #5a63d2;
+}
+
+.date-display {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Time Slot Layout */
+.rbc-time-view {
+  border: none;
+}
+
+.rbc-time-header {
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+}
+
+.rbc-time-content {
+  border-top: 2px solid #ddd;
+}
+
+.rbc-time-slot {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Event Blocks */
+.rbc-event {
+  background-color: #cce5ff;
+  color: #004085;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rbc-event-content {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rbc-event-time {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+/* Button at the Top (like "+ Ajouter") */
+.add-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #0056b3;
+}
+
+/* Apply rounded borders to day cells in the month view */
+.rbc-month-view .rbc-day-bg {
+  border-radius: 10px; /* Adjust the radius as needed */
+  border: 1px solid #787fca; /* Adjust border color as needed */
+  padding: 5px;
+  background: #ffffff;
+  margin: 4px;
+  /* Prevent text from wrapping to the next line */
+}
+
+.rbc-header {
+  text-align: center; /* Centre le texte dans les en-têtes du calendrier */
+}
+/* Optional: Add some padding and margin for better visual appearance */
+.rbc-month-view .rbc-day-slot {
+  padding: 5px;
+}
+
+/* Optional: If you want to ensure the borders don't overlap or are not too thick */
+.rbc-month-view .rbc-day-bg {
+  border-width: 1px;
+}
+
+.rbc-header {
+  overflow: hidden;
+  flex: 1 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 3px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 90%;
+  min-height: 0;
+}
+.rbc-header + .rbc-header {
+  border-left: none;
+}
+
+/* Optional: Adjust spacing for better visual alignment */
+.rbc-month-view .rbc-day-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rbc-month-row + .rbc-month-row {
+  border-top: none;
+}
+/* Increase specificity or use !important */
+.rbc-month-view .rbc-month-row + .rbc-month-row {
+  border-top: none !important; /* Remove the border between rows */
+}
+.rbc-month-view {
+  border: none !important; /* Remove border if it’s being overridden */
+}
+.rbc-header {
+  border-bottom: none !important;
+}
+/* Increase specificity to ensure this style is applied */
+.rbc-month-view .rbc-header + .rbc-header {
+  border-left: none; /* Remove the border */
+}
+
+/* Centrer les jours du calendrier */
+.rbc-day-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* padding: px; */
+  box-sizing: border-box;
+  width: 30px !important;
+  border: 1px solid #ddd;
+}
+.rbc-row {
+  color: #787fca;
+}
+.custom-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f9fa;
+}
+
+.custom-nav-button {
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+.custom-nav-button:focus {
+  outline: none;
+}
+
+.modal-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1050;
+}
+
+.modal-dialog {
+  background-color: white;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.modal-title {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+.modal-body .form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.modal-body .form-control {
+  width: 100%;
+  padding: 8px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Align DatePicker, startTime, and endTime on the same line */
+.date-time-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 15px;
+}
+
+/* Reduce the width of the time fields */
+.date-time-container .time-picker {
+  width: 70%; /* Adjust width as needed */
+}
+
+/* Ensure the DatePicker takes up the remaining space */
+.date-time-container .date-picker {
+  width: 60%; /* Adjust width as needed */
+}
+
+/* General Styling for Form Fields */
+.modal-body .form-control {
+  padding: 8px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Modal Styling */
+.modal-dialog {
+  background-color: white;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.modal-title {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+/* Modal Body Styling */
+.modal-body .form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Modal Footer Styling */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Buttons Styling */
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  min-width: 120px;
+  margin-right: 1rem;
+}
+
+.date-time-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.time-picker {
+  flex: 1;
+  /* margin-right: 1rem; */
+}
+.rbc-event-content {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.rbc-event-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: currentColor;
+  margin-right: 5px;
+}
+.day-with-badge {
+  position: relative;
+}
+
+.day-with-badge::after {
+  content: "+5";
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: #6366f1;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.rbc-event {
+  background-color: transparent;
+  color: #000;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: normal;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rbc-event .rbc-event-content {
+  font-weight: bold;
+}
+
+.rbc-event .rbc-event-title {
+  font-weight: bold;
+}
+
+.rbc-event-content {
+  font-weight: bold;
+  color: black;
+}
+
+.rbc-event {
+  background-color: transparent !important;
+  border: none !important;
+  color: black !important;
+  position: relative;
+  padding-left: 20px !important;
+}
+
+.rbc-event:before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: #3a63f3;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 90%;
+  transform: translate(-50%, -50%);
+}

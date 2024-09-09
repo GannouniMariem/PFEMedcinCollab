@@ -1,0 +1,55 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 135vh;
+  background: linear-gradient(
+    to right,
+    #d4f0ff,
+    #e2f7e6
+  ); /* Dégradé en arrière-plan */
+  padding: 0px; /* Padding global */
+}
+
+.dashboard-content {
+  display: flex;
+  flex: 1;
+  margin-top: 10px; /* Espacement au-dessus du contenu principal */
+}
+
+.dashboard-content > * {
+  margin: 10px;
+}
+
+.main-content {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.next-appointment {
+  background-color: white;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Légère ombre */
+  margin-bottom: 20px; /* Espacement en dessous pour séparer du calendrier */
+}
+
+.calendar-component {
+  flex: 1;
+  background-color: white;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Légère ombre */
+}
+
+.patients-list {
+  flex: 1 1;
+  max-width: 303px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 15px; /* Padding interne */
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+  overflow-y: auto;
+  /* Pas besoin de padding supplémentaire ici */
+  text-align: left; /* Assure que le texte dans la liste est aligné à gauche */
+}

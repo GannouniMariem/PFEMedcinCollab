@@ -1,0 +1,99 @@
+/* Global Styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar styles */
+.navbarPrincipale {
+  display: flex;
+  box-shadow: 3px 4px 8px 0px #ada9c375;
+  background: #f8f8f8;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  margin: 0; /* Enlève les marges autour de la navbar */
+  width: 100%; /* Assure que la navbar occupe toute la largeur */
+}
+
+.block2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.bloc3 {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.bloc4 {
+  display: flex;
+  gap: 1rem;
+}
+
+.doctor-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.doctor-name {
+  font-weight: bold;
+}
+
+.doctor-role {
+  font-weight: normal;
+  color: #949aaf;
+}
+
+.docImage {
+  border-radius: 50%;
+  border: 2px solid #3a63f3;
+}
+
+h1 {
+  color: #3a63f3;
+}
+
+.homeImage,
+.calenderImage,
+.patientImage,
+.colabImage,
+.recommandationImage {
+  width: 24px; /* Exemple de taille, ajustez selon les besoins */
+  height: 24px;
+}
+
+.clockImage {
+  width: 24px;
+  height: 24px;
+}
+
+/* Styles spécifiques à bodyInscription */
+.bodyInscription {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 3rem;
+  margin-right: 2rem;
+}
+
+.logoImage {
+  width: 600px;
+  margin-top: 4rem;
+}

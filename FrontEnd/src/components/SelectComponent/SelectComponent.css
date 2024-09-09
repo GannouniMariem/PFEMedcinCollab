@@ -1,0 +1,20 @@
+.select-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+select {
+  width: 219px;
+  padding: 7px;
+  border: 1px solid #ada9c3;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 0.4rem;
+}
+
+select + label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
